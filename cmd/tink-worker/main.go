@@ -25,6 +25,7 @@ func main() {
 	defer logger.Close()
 
 	rootCmd := cmd.NewRootCommand(version, logger)
+	cmd.RegisterDocsCommand(rootCmd)
 
 	if err := rootCmd.Execute(); err != nil {
 		os.Exit(1)
